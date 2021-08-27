@@ -13,12 +13,13 @@ void Calibrate(){
     delay(10);
   }
   
-  for(int i = 0; i < 100; i++){
+  for(int i = 100; i > -100; i--){
     motors.Write(i, -i);
     compass.UpdateReadings();
     Serial.println(compass.GetHeading());
     delay(10);
   }
+  
   for(int i = -100; i < 0; i++){
     motors.Write(i, -i);
     compass.UpdateReadings();
